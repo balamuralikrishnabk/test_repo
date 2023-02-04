@@ -14,7 +14,30 @@ npm run first-test
 npm run all
 
 ```
+# Feature: This feature will make sure that the shop page is navigable and usable
+Scenario 2: User sees deals on the mobile shop page 
+- Given I am on the ‘https://www.sky.com/shop/mobile/deals‘ page  
+# //div[@class='c-mobile-selection c-mobile-selection--deal'][2]
+- Then I see at least 3 tiles with a picture and price on them
+# //span[@class='c-linear-costing__main-price'][3]
+# //img[@class='c-media c-media--progressive c-media--mobile-media']
 
+
+
+# Feature: This feature will make sure that the shop page is navigable and usable
+Scenario 3: User is prompted to create my Sky password when signing in with invalid credentials
+- Given I am on the home page 
+- When I try to sign in with invalid credentials  
+- Then I should see a box containing the text ‘Create your My Sky password’ 
+
+
+# Feature: This feature will make sure the search is working correctly
+Scenario 1: Show the results determined by editorial, as well as generic searches. 
+- Given I am on the home page 
+- When I search ‘sky’ in the search bar 
+# //div[@id='search-results-wrapper']
+- Then I should see an editorial section (example screenshot below)
+```
 
 ----
 
